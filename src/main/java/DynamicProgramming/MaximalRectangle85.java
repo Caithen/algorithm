@@ -1,4 +1,4 @@
-package DynasticProgramming;
+package DynamicProgramming;
 
 import java.util.Stack;
 

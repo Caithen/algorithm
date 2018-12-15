@@ -1,4 +1,4 @@
-package DynasticProgramming;
+package DynamicProgramming;
 
 /**
  * Created by user on 2018/12/14.
