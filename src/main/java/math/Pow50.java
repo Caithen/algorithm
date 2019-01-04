@@ -6,6 +6,7 @@ package math;
 public class Pow50 {
     public static void main(String[] args) {
         double x = 0; int n = 0;
+        System.out.println(myPow(99, 222222220));
         System.out.println(myPow(x, n));
         double x1 = 1; int n1 = 100;
         System.out.println(myPow(x1, n1));
@@ -35,6 +36,7 @@ public class Pow50 {
 //            else return  x * myPow(x * x, n >> 1);
 //        } else return 1 / (x * myPow(x, -(n + 1)));
 //    }
+    // 负数转正数，注意最小值
     public static double myPow(double x, int n) {
         if (n == 0) return 1;
         if (n > 0) return (n & 1) == 0 ? myPow(x * x, n >> 1) : x * myPow(x * x, n >> 1);
