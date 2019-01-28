@@ -9,7 +9,7 @@ import java.util.List;
 public class UniqueBinarySearchTreesII95 {
     public static void main(String[] args) {
         for (TreeNode r : generateTrees(3)) {
-            TreeNode.printTree(r);
+            r.printTree(r);
             System.out.println();
         }
     }
