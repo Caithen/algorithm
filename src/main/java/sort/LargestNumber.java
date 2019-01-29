@@ -4,12 +4,13 @@ import java.util.*;
 
 /**
  * Created by 15501 on 2018/10/25.
+ * 这里需要注意数组里可能包含多个0 ：{0，0}
  */
 public class LargestNumber {
     public static void main(String[] args) {
         // 下面是特例
-//        int[] nums = {3,30,34,5,9}; // => 9534330
-        int[] nums = {0, 0};
+        int[] nums = {3,30,34,5,9}; // => 9534330
+//        int[] nums = {0, 0};
         System.out.println(largestNumber(nums));
     }
 
@@ -22,16 +23,6 @@ public class LargestNumber {
         Collections.sort(strNums, new Comparator<String>() {
             public int compare(String s, String t1) {
                 return -(s + t1).compareTo(t1 + s);
-//                if (s.length() == t1.length()) return t1.compareTo(s);
-//                if (s.length() < t1.length()) {
-//                    if (s.equals(t1.substring(0, s.length()))) {
-//                        return compare(s, t1.substring(s.length()));
-//                    } else return t1.compareTo(s);
-//                } else {
-//                    if (t1.equals(s.substring(0, t1.length()))) {
-//                        return compare(s.substring(t1.length()), t1);
-//                    } else return t1.compareTo(s);
-//                }
             }
         });
         String res = "";
