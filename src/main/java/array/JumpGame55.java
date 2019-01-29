@@ -1,11 +1,16 @@
 package array;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by user on 2019/1/3.
  */
 public class JumpGame55 {
     public static void main(String[] args) {
         int[] nums = {2,3,1,1,4};
+        List temp = Arrays.asList(nums);
+
         System.out.println(canJump(nums));
         nums = new int[]{3,2,1,0,4};
         System.out.println(canJump(nums));
