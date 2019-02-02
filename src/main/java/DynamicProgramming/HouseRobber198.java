@@ -5,30 +5,30 @@ package DynamicProgramming;
  */
 public class HouseRobber198 {
     public static void main(String[] args) {
-        int[] nums = {1,2,3,1};
+        int[] nums = {1,2,3,1}; // 4
         System.out.println(rob(nums));
-        nums = new int[]{2,7,9,3,1};
+        nums = new int[]{2,7,9,3,1}; // 12
         System.out.println(rob(nums));
-        nums = new int[]{};
+        nums = new int[]{}; // 0
         System.out.println(rob(nums));
-        nums = new int[]{2};
+        nums = new int[]{2}; // 2
         System.out.println(rob(nums));
-        nums = new int[]{2,1,1,2};
+        nums = new int[]{2,1,1,2}; // 4
         System.out.println(rob(nums));
-        nums = new int[]{3, 1, 1, 4, 1, 1, 5};
+        nums = new int[]{3, 1, 1, 4, 1, 1, 5}; // 12
         System.out.println(rob(nums));
     }
 
     // 空间优化的动态规划，
     // 维持两个变量：rob表示抢这间，notRob表示不抢这间
     public static int rob(int[] nums) {
-        int rob = 0, notRob = 0, preRob, preNotRob;
-        for (int i = 0; i < nums.length; i++) {
-            preRob = rob; preNotRob = notRob;
-            rob = preNotRob + nums[i];
-            notRob = Math.max(preNotRob, preRob);
+        int pre = 0, cur = 0, res = 0;
+        for (int num : nums) {
+            res = Math.max(pre + num, cur);
+            pre = cur;
+            cur = res;
         }
-        return Math.max(rob, notRob);
+        return res;
     }
 
     // 下面是最简单粗暴的动态规划

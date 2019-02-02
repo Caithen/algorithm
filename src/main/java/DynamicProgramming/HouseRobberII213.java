@@ -1,17 +1,15 @@
 package DynamicProgramming;
 
-import sun.nio.cs.ext.MacHebrew;
-
 /**
  * Created by user on 2018/12/21.
  */
 public class HouseRobberII213 {
     public static void main(String[] args) {
-        int[] nums = {2,3,2};
+        int[] nums = {2,3,2}; // 3
         System.out.println(rob(nums));
-        nums = new int[]{1,2,3,1};
+        nums = new int[]{1,2,3,1}; // 4
         System.out.println(rob(nums));
-        nums = new int[]{2};
+        nums = new int[]{2}; // 2
         System.out.println(rob(nums));
     }
 
@@ -22,12 +20,12 @@ public class HouseRobberII213 {
         return Math.max(rob(nums, 0), rob(nums, 1));
     }
     public static int rob(int[] nums, int start) {
-        int rob = 0, notRob = 0, preRob, preNotRob;
+        int pre = 0, cur = 0, res = 0;
         for (int i = start; i < nums.length - 1 + start; i++) {
-            preRob = rob; preNotRob = notRob;
-            rob = preNotRob + nums[i];
-            notRob = Math.max(preNotRob, preRob);
+            res = Math.max(pre + nums[i], cur);
+            pre = cur;
+            cur = res;
         }
-        return Math.max(rob, notRob);
+        return res;
     }
 }

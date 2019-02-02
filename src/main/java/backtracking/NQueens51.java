@@ -36,6 +36,7 @@ public class NQueens51 {
         helper(chessboard, 0, n, temp, res);
         return res;
     }
+
     private static void helper(char[][] chessboard, int row, int n, List<String> temp, List<List<String>> res) {
         if (row == n) {
             res.add(temp); return;
@@ -52,6 +53,7 @@ public class NQueens51 {
             chessboard[row][k] = '.';
         }
     }
+
     private static boolean isValid(char[][] chessboard, int row, int col, int n) {
         for (int i = 0; i < row; i++) if (chessboard[i][col] == 'Q') return false;
         for (int j = 0; j < col; j++) if (chessboard[row][j] == 'Q') return false;
