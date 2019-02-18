@@ -3,7 +3,7 @@ package linkedList;
 /**
  * Created by user on 2018/12/21.
  */
-public class ListNode {
+class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }

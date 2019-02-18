@@ -8,7 +8,7 @@ import java.util.List;
  * 这道题使用 摩尔投票法，注意使用的技巧
  * 先找到两个众数，然后统计两个众数出现的次数，最后将出现次数大于 nums.length / 3 的数加入 res
  */
-public class MajorityElementII {
+public class MajorityElementII229 {
     public static void main(String[] args) {
         int[] nums = {3,2,3};
         for (int num : majorityElement(nums))
@@ -40,6 +40,8 @@ public class MajorityElementII {
             else if (num == n) ncnt++;
         }
 
+        // 这里不用判断 m != n，是因为上一步计数时，
+        // 如果两个数相等，则只有一个数能被计数
         if (mcnt > nums.length / 3) res.add(m);
         if (ncnt > nums.length / 3) res.add(n);
 

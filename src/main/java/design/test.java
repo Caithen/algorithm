@@ -13,13 +13,21 @@ public class test {
 //        trie.insert("app");
 //        System.out.println(trie.search("app"));
 
-        WordDictionary wordDict = new WordDictionary();
-        wordDict.addWord("bad");
-        wordDict.addWord("dad");
-        wordDict.addWord("mad");
-        System.out.println(wordDict.search("pad"));
-        System.out.println(wordDict.search("bad"));
-        System.out.println(wordDict.search(".ad"));
-        System.out.println(wordDict.search("b.."));
+//        WordDictionary wordDict = new WordDictionary();
+//        wordDict.addWord("bad");
+//        wordDict.addWord("dad");
+//        wordDict.addWord("mad");
+//        System.out.println(wordDict.search("pad"));
+//        System.out.println(wordDict.search("bad"));
+//        System.out.println(wordDict.search(".ad"));
+//        System.out.println(wordDict.search("b.."));
+
+        MyStack stack = new MyStack();
+
+        stack.push(1);
+        stack.push(2);
+        System.out.println(stack.top());   // returns 2
+        System.out.println(stack.pop());   // returns 2
+        System.out.println(stack.empty()); // returns false
     }
 }

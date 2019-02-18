@@ -37,9 +37,11 @@ public class MaximalSquare221 {
     public static int maximalSquare(char[][] matrix) {
         int res = 0;
         if (matrix.length < 1 || matrix[0].length < 1) return res;
-        int m = matrix.length, n = matrix[0].length, pre = 0;
+        int m = matrix.length, n = matrix[0].length;
         int[] dp = new int[n + 1];
         for (int i = 0; i < m; i++) {
+            // 记录左上角的值
+            int pre = 0;
             for (int j = 1; j <= n; j++) {
                 int t = dp[j];
                 if (matrix[i][j - 1] == '1') {
@@ -51,5 +53,31 @@ public class MaximalSquare221 {
         }
         return res;
     }
+
+    // 下面方法是二位数组动态规划
+//    public static int maximalSquare(char[][] matrix) {
+//
+//        if (matrix.length < 1 || matrix[0].length < 1) return 0;
+//
+//        int m = matrix.length, n = matrix[0].length;
+//
+//        int[][] dp = new int[m][n];
+//
+//        int res = 0;
+//
+//        for (int i = 0; i < m; i++) {
+//            for (int j = 0; j < n; j++) {
+//                if (i == 0 || j == 0) dp[i][j] = matrix[i][j] - '0';
+//                else if (matrix[i][j] == '0') dp[i][j] = 0;
+//                else {
+//                    dp[i][j] = 1 + Math.min(dp[i - 1][j - 1], Math.min(dp[i - 1][j], dp[i][j - 1]));
+//                }
+//                res = Math.max(res, dp[i][j] * dp[i][j]);
+//            }
+//        }
+//
+//        return res;
+//    }
+
 
 }
