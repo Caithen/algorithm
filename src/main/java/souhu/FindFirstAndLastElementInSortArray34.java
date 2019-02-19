@@ -1,4 +1,4 @@
-package search.summary;
+package souhu;
 
 /**
  * Created by 15501 on 2018/11/11.

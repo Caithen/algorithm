@@ -30,7 +30,7 @@ public class Codec {
     }
 
     public TreeNode deserialize(String data) {
-        Queue<String> queue = new LinkedList<>();
+        Queue<String> queue = new LinkedList<String>();
         queue.addAll(Arrays.asList(data.split(spliter)));
         return buildTree(queue);
     }

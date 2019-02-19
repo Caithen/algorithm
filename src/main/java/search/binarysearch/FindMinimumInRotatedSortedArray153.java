@@ -1,4 +1,4 @@
-package search;
+package search.binarysearch;
 
 /**
  * Created by 15501 on 2018/12/6.
@@ -31,12 +31,28 @@ public class FindMinimumInRotatedSortedArray153 {
 //        return nums[right];
 //    }
     public static int findMin(int[] nums) {
-        int left = 0, right = nums.length - 1, mid;
-        while (left < right) {
-            mid = left + (right - left) / 2;
-            if (nums[mid] > nums[right]) left = mid + 1;
-            else right--;
+
+        if (nums == null || nums.length == 0) return -1;
+
+        int start = 0, end = nums.length - 1, mid;
+
+        while (start + 1 < end) {
+
+            mid = start + (end - start) / 2;
+
+            if (nums[mid] > nums[end]) {
+
+                start = mid;
+
+            } else {
+
+                end--;
+
+            }
+
         }
-        return nums[right];
+
+        return Math.min(nums[start], nums[end]);
+
     }
 }

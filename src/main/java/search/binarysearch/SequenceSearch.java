@@ -1,4 +1,4 @@
-package search.summary;
+package search.binarysearch;
 
 /**
  * Created by 15501 on 2018/11/2.

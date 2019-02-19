@@ -8,6 +8,7 @@ import java.util.HashMap;
  * 分母为 0，
  * 分子为 0，
  * 分子或分母为负数
+ * 如果题意允许使用long类型，尽量使用long类型，不然全部转化为负数
  */
 public class FractionToRecurringDecimal166 {
     public static void main(String[] args) {

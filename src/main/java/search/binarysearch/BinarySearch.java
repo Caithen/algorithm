@@ -1,6 +1,4 @@
-package search.summary;
-
-import java.util.Arrays;
+package search.binarysearch;
 
 /**
  * Created by 15501 on 2018/11/2.
